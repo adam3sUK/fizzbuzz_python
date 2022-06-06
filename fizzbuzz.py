@@ -1,18 +1,15 @@
 def fizzbuzz(upto):
-  generate_string = ""
+  generated_list = []
   while upto > 0:
-    upto_string = str(upto)
+    to_insert = str(upto)
     if upto % 15 == 0:
-      upto_string = "FizzBuzz"
+      to_insert = "FizzBuzz"
     elif upto % 3 == 0:
-      upto_string = "Fizz"
+      to_insert = "Fizz"
     elif upto % 5 == 0:
-      upto_string = "Buzz"
-    
-    generate_string = upto_string if len(generate_string) == 0 else f"{upto_string}, {generate_string}"
+      to_insert = "Buzz"
+
+    generated_list.insert(0,to_insert)
     upto -= 1
 
-  return generate_string
-
-
-print(fizzbuzz(100))
+  return ', '.join(generated_list)
